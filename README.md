@@ -48,3 +48,7 @@
 
 - [ ] What are the security risks to HTTP, and how do we deal with them?
 - [ ] What are the services that TLS provides?
+
+## Study Sessions
+
+- [The Internet - 10/12/2021](./study_sessions/10_12_21.md)
