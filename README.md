@@ -11,7 +11,7 @@
 
 ### The Internet
 
-- [ ] What is the Internet and how does it work?
+- [What is the Internet and how does it work?](./the_internet.md)
 - [ ] What are the characteristics of the Physical Network?
 - [ ] Lower Level Protocols:
   - [ ] The Link/DataLink Layer
