@@ -52,3 +52,4 @@
 ## Study Sessions
 
 - [The Internet - 10/12/2021](./study_sessions/10_12_21.md)
+- [TCP & UDP - 10/13/2021](./study_sessions/10_13_21.md)
