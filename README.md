@@ -12,7 +12,10 @@
 ### The Internet
 
 - [What is the Internet and how does it work?](./study_guide/the_internet.md)
-- [ ] What are the characteristics of the Physical Network?
+- [The Physical Network](./study_guide/physical_network.md)
+  - [What is the Physical Network?](./study_guide/physical_network.md#what-is-the-physical-network?)
+  - [The Characteristics of the Physical Network](./study_guide/physical_network.md#what-are-the-characteristics-of-the-physical-network?)
+  - [Elements of Latency](./study_guide/physical_network.md#the-elements-of-latency)
 - [ ] Lower Level Protocols:
   - [ ] The Link/DataLink Layer
   - [ ] The Internet/Network Layer
