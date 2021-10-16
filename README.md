@@ -12,6 +12,12 @@
 ### The Internet
 
 - [What is the Internet and how does it work?](./study_guide/the_internet.md)
+  - [What is the Internet?](./study_guide/the_internet.md#what-is-the-internet?)
+  - [How does the Internet work?](./study_guide/the_internet.md#how-does-the-internet-work?)
+  - [What is the web?](./study_guide/the_internet.md#what-is-the-web?)
+  - [What is a resource?](./study_guide/the_internet.md#what-is-a-resource?)
+  - [What is the client-server model?](./study_guide/the_internet.md#what-is-the-client-server-model?)
+    - [Server-side Infrastructure](./study_guide/the_internet.md#server-side-infrastructure)
 - [The Physical Network](./study_guide/physical_network.md)
   - [What is the Physical Network?](./study_guide/physical_network.md#what-is-the-physical-network?)
   - [The Characteristics of the Physical Network](./study_guide/physical_network.md#what-are-the-characteristics-of-the-physical-network?)
@@ -25,8 +31,6 @@
     - [How does IP implement its functionality?](./study_guide/lower_level_protocols.md#how-does-IP-implement-its-functionality?)
     - [What is an IP address?](./study_guide/lower_level_protocols.md#what-is-an-ip-address?)
   - [DNS](./study_guide/lower_level_protocols.md#dns)
-- [ ] The client-server model of web interactions
-  - [ ] Where does HTTP fit in?
 
 ### TCP & UDP
 
