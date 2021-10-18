@@ -34,6 +34,13 @@
 
 ### TCP & UDP
 
+- [The Transport Layer](./study_guide/tcp_udp.md#the-transport-layer)
+  - [What is the Transport Layer?](./study_guide/tcp_udp.md#what-is-the-transport-layer)
+  - [What is multiplexing and how is it enabled?](./study_guide/tcp_udp.md#what-is-multiplexing-and-how-is-it-enabled?)
+  - [What is a socket?](./study_guide/tcp_udp.md#what-is-a-socket?)
+  - [Connection Oriented Systems vs Connectionless Systems](./study_guide/tcp_udp.md#connection-oriented-system-vs-connectionless-system)
+  - [What is Network Reliability?](./study_guide/tcp_udp.md#what-is-network-reliabilty?)
+
 - [ ] TCP Protocols
 - [ ] UDP Protocols
 - [ ] What are the trade offs and use cases for TCP vs UDP?
