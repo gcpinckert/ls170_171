@@ -6,6 +6,13 @@
   - [What is a socket?](#what-is-a-socket?)
   - [Connection Oriented Systems vs Connectionless Systems](#connection-oriented-system-vs-connectionless-system)
   - [What is Network Reliability?](#what-is-network-reliabilty?)
+  - [What is Pipelining?](#what-is-pipelining?)
+- [TCP](#tcp)
+  - [What is TCP?](#what-is-tcp?)
+  - [What is the three-way handshake?](#tcp-handshake)
+  - [What are some disadvantages of TCP?](#tcp-disadvantages)
+  - [What is Flow Control?](#flow-control)
+  - [What is Congestion Avoidance?](#congestion-avoidance)
 
 ## The Transport Layer
 
@@ -63,3 +70,73 @@ OTHER THINGS TO CONSIDER:
   - Handing duplication (ensures duplicate data is eliminated)
 - Network reliability is implemented by TCP in the Transport Layer.
 - Lower level protocols are inherently unreliable, because they drop corrupted data with no protocols for replacement or retrieval.
+
+### What is pipelining?
+
+- Sending multiple messages at once, without waiting for an acknowledgement.
+- This is necessary because if each data transmission must _stop and wait_ for an acknowledgement too much time is spent waiting for the recipient's acknowledgment, which contributes greatly to latency.
+- Pipelining transmissions can mitigate the latency added by additional waiting time, specifically with regards to the acknowledgement required in TCP and the three way handshake.
+- This ensures that TCP is reliable but also as efficient as possible.
+
+## TCP
+
+### What is TCP?
+
+What is the TCP protocol and what services does it provide?
+
+- Transmission Control Protocol operates in the Transport Layer
+- It is a connection-oriented protocol that ensures reliable data transfer between applications on top of the unreliable channel of the lower-layer protocols.
+- It provides both _multiplexing_ services, enabling end-to-end communication between processes, and provides features such as the TCP Handshake process that ensure network reliability.
+- TCP Data is encapsulated into a PDU called a TCP segment, which provides five main services:
+  - Multiplexing through source and destination port numbers
+  - Error detection through a checksum
+  - In-order deliver, handling data loss, and handling data duplication through sequence and acknowledgment numbers
+  - Flow control through window size data
+  - Congestion avoidance through dynamic adjustment of flow according to data loss
+
+Higher Level / More abstract:
+
+Transmission Control Protocol is a protocol that operates within the Transport Later. It provides multiplexing, or end-to-end communication between multiple processes over the single channel provided by IP, via port numbers. It also has features that ensure reliability. It uses a three-way handshake to establish dedicated communication connections and this ensures data integrity, de-duplication, in-order delivery, and retransmission of lost data. The complexity of this process can cause significant latency overhead. To mitigate this and to be as efficient as possible, TCP provides flow control and congestion avoidance.
+
+### TCP Handshake
+
+What are the steps for the three-way handshake? What is its purpose?
+
+- The TCP handshake is used for _establishing dedicated and reliable connections_ between processes over the network.
+- First the sender sends a `SYN` segment, which ostensibly asks if the receiver is ready to receive.
+- Upon receipt of the `SYN` segment, the receiver sends back a `SYN ACK` segment, indicating that it received the previous message and ensuring its messages are also being received.
+- Finally, upon receiving the `SYN ACK`, the original sender sends an `ACK` segment, indicating it is also receiving messages from the receiver, and the connection can be (and subsequently is) established.
+- This not only ensures a reliable connection between both devices, but synchronizes sequence numbers that will be used during the connection.
+- It is this aspect of TCP that enables network reliability, that is, handling data loss through message acknowledgement, and ensuring in order delivery and de-duplication via the synchronized segment numbers.
+
+### TCP Disadvantages
+
+What are the disadvantages of TCP?
+
+- TCP provides reliability at the cost of speed (that is, its reliability functions can contribute greatly to latency)
+- First, there is added overhead due to the need of establishing a connection with the three-way handshake, which can add up to two round trip times.
+- There is also the possibility of additional delays due to Head-of-Line blocking as a result of in-order delivery.
+  - Because TCP provides in-order delivery of segments, a single segment that has a delay (say, due to being dropped and retransmitted) can "hold up" the other segments behind it in the buffer.
+  - This can lead to increased queuing delay.
+- It's not as flexible as other Transport Layer protocols such as UDP.
+
+### Flow Control
+
+What is flow control?
+
+- Provided by TCP, flow control helps to ensure that data is transmitted as efficiently as possible.
+- This, in turn, helps to mitigate the increased latency inherent in TCP connections.
+- Flow control is used to prevent the sender from overwhelming the receiver with too much data all at once.
+- It is implemented via the _window_ field of the TCP segment header.
+  - The _window_ header contains data sent by the receiver letting the sender know the maximum amount of data it can accept at any given time.
+  - This number is dynamically generates, and therefore the receiver can lower the amount if the buffer is getting full, and the sender will respond accordingly.
+
+### Congestion Avoidance
+
+What is congestion avoidance?
+
+- Congestion avoidance is a service provided by TCP that attempts to prevent network congestion, a situation in which more data is being transmitted than there is capacity.
+- To implement this, TCP uses data loss as a feedback mechanism to determine how "congested" the network is, by tracking how many retransmissions are required.
+- A lot of data loss, or a lot of retransmissions, indicates there is more data on the network than there is capacity to process that data.
+- TCP will take this as a sign to reduce the size of the transmission window, that is, it will send less data along the given channel.
+- This is to make data transmission as efficient as possible to mitigate the latency overhead inherent in TCP connections.

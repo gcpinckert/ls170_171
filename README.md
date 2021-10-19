@@ -40,8 +40,13 @@
   - [What is a socket?](./study_guide/tcp_udp.md#what-is-a-socket?)
   - [Connection Oriented Systems vs Connectionless Systems](./study_guide/tcp_udp.md#connection-oriented-system-vs-connectionless-system)
   - [What is Network Reliability?](./study_guide/tcp_udp.md#what-is-network-reliabilty?)
+- [TCP](./study_guide/tcp_udp.md#tcp)
+  - [What is TCP?](./study_guide/tcp_udp.md#what-is-tcp?)
+  - [What is the three-way handshake?](./study_guide/tcp_udp.md#tcp-handshake)
+  - [What are some disadvantages of TCP?](./study_guide/tcp_udp.md#tcp-disadvantages)
+  - [What is Flow Control?](./study_guide/tcp_udp.md#flow-control)
+  - [What is Congestion Avoidance?](./study_guide/tcp_udp.md#congestion-avoidance)
 
-- [ ] TCP Protocols
 - [ ] UDP Protocols
 - [ ] What are the trade offs and use cases for TCP vs UDP?
 - [ ] The Three-Way Handshake (aka TCP Handshake)
