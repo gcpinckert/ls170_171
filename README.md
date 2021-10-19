@@ -72,3 +72,4 @@
 - [The Internet - 10/12/2021](./study_sessions/10_12_2021.md)
 - [TCP & UDP - 10/13/2021](./study_sessions/10_13_21.md)
 - [URLs and More - 10/14/2021](./study_sessions/10_14_21.md)
+- [HTTP & TLS - 10/18/2021](./study_sessions/10_18_221.md)
