@@ -8,7 +8,7 @@
 ## What is a URL?
 
 - A URL is a **Uniform Resource Locator**
-- It is a consistently formatted string that allows us to _locate_ a certain resource on [the web](./study_guide/the_internet.md#what-is-the-web?).
+- It is a consistently formatted string that allows us to _locate_ a certain resource on [the web](../study_guide/the_internet.md#what-is-the-web?).
 - It consists of a _scheme_, _host_, _path_, _port number_, and any _query strings_ that we wish to include as parameters.
 - It provides us with a systematic means of locating resources that we are requesting (via an HTTP request).
 
@@ -33,7 +33,7 @@ Example URL: `https://launchschool.com/staff/assessments/completed?course=RB109&
 - The **host** indicates where the resource in question is located (i.e. hosted).
   - This is written in the format of a _domain name_.
   - In the example, the host is `launchschool.com`
-  - [DNS](./study_guide/lower_level_protocols.md#dns) takes this human readable domain and finds the equivalent IP so the request can be routed.
+  - [DNS](../study_guide/lower_level_protocols.md#dns) takes this human readable domain and finds the equivalent IP so the request can be routed.
   - It is a mandatory component of the URL
 - The **port** is an identifier for the specific process to which the communication should be routed.
   - The port number is optional, if none is supplied the default port number for the scheme will be used
