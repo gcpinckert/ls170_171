@@ -53,9 +53,11 @@
 
 ### URLs
 
-- [ ] What is a URL? What are its components?
-- [ ] Constructing URLs
-- [ ] URL encoding
+- [What is a URL?](./study_guide/urls.md#what-is-a-url?)
+- [What is a URI and how does it relate to a URL?](./study_guide/urls.md#uris)
+- [What are the components of a URL?](./study_guide/urls.md#what-are-the-components-of-a-url?)
+- [What is URL Encoding?](./study_guide/urls.md#url-encoding)
+
 
 ### HTTP and the Request/Response Cycle
 
