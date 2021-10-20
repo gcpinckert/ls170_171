@@ -46,11 +46,10 @@
   - [What are some disadvantages of TCP?](./study_guide/tcp_udp.md#tcp-disadvantages)
   - [What is Flow Control?](./study_guide/tcp_udp.md#flow-control)
   - [What is Congestion Avoidance?](./study_guide/tcp_udp.md#congestion-avoidance)
-
-- [ ] UDP Protocols
-- [ ] What are the trade offs and use cases for TCP vs UDP?
-- [ ] The Three-Way Handshake (aka TCP Handshake)
-- [ ] Flow control and congestion avoidance
+- [UDP](./study_guide/tcp_udp.md#udp)
+  - [What is the PDU for UDP?](./study_guide/tcp_udp.md#udp-pdu)
+  - [What are the advantages and disadvantages of UDP?](./study_guide/tcp_udp.md#pros-and-cons)
+  - [What are some use cases for UDP over TCP?](./study_guide/tcp_udp.md#use-cases)
 
 ### URLs
 

@@ -13,6 +13,10 @@
   - [What are some disadvantages of TCP?](#tcp-disadvantages)
   - [What is Flow Control?](#flow-control)
   - [What is Congestion Avoidance?](#congestion-avoidance)
+- [UDP](#udp)
+  - [What is the PDU for UDP?](#udp-pdu)
+  - [What are the advantages and disadvantages of UDP?](#pros-and-cons)
+  - [What are some use cases for UDP over TCP?](#use-cases)
 
 ## The Transport Layer
 
@@ -140,3 +144,38 @@ What is congestion avoidance?
 - A lot of data loss, or a lot of retransmissions, indicates there is more data on the network than there is capacity to process that data.
 - TCP will take this as a sign to reduce the size of the transmission window, that is, it will send less data along the given channel.
 - This is to make data transmission as efficient as possible to mitigate the latency overhead inherent in TCP connections.
+
+## UDP
+
+What is UDP?
+
+- User Datagram Protocol is a protocol that establishes end-to-end connections between processes in the Transport Layer.
+- It is a very simple and _connectionless_ protocol.
+- Like TCP, it enables multiplexing through source and destination port numbers.
+- Unlike TCP, it does not provide reliability features beyond optional error detection via a checksum.
+- It makes up for this lack of reliability with its speed and flexibility.
+- Specifically, UDP provides speed because it doesn't take the time to establish a dedicated connection, its lack of in-order delivery means no latency due to Head-of-Line blocking, and the one way data flow of a connectionless system cuts down on latency due to extra round trips (there are no acknowledgments).
+- Furthermore, UDP acts as a base that programmers can build upon. The specifics of what type of reliability functions to include are left up to the developer to implement at the Application level.
+
+### UDP PDU
+
+What is the PDU for UDP and how is it structured?
+
+- The PDU of UDP is known as a **datagram**
+- It consists of metadata in the form of headers, and a data payload, which is the encapsulated HTTP request or response from the Application Layer above.
+- Its headers contain source port and destination port data, which provides for multiplexing and socket routing, information about the length of the datagram, and a checksum.
+
+### Pros and Cons
+
+What are the advantages and disadvantages of UDP?
+
+- UDP does not provide any of the reliability of TCP. It is just as inherently unreliable as the layers below it.
+- With UDP there is no guarantee of message delivery, delivery order, congestion avoidance, flow control, or state tracking.
+- Its main advantages are speed and flexibility (see above).
+
+### Use Cases
+
+What are some use cases for UDP over TCP?
+
+- UDP is a good option for any application that prioritizes speed and flexibility.
+- For example, video calling applications and online games that prioritize speed over the potential for small amounts of lost data, can utilize UDP.
