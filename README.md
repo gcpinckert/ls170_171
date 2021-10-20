@@ -61,12 +61,15 @@
 
 ### HTTP and the Request/Response Cycle
 
-- [ ] What are HTTP requests, and what are their components?
-  - [ ] Special Attention: `GET` vs `POST`
-- [ ] What are HTTP responses, and what are their components?
-  - [ ] Special Attention: status codes (provide examples)
-- [ ] The HTTP request/response cycle
-- [ ] What is meant by 'state' in the context of the web? How do we simulate it?
+- [What is HTTP?](./study_guide/http.md#what-is-http)
+- [What is an HTTP request?](./study_guide/http.md#http-requests)
+  - [What are GET and POST requests?](./study_guide/http.md#get-and-post-requests)
+- [What is an HTTP response?](./study_guide/http.md#http-responses)
+  - [What are status codes?](./study_guide/http.md#status-codes)
+- [Browsers vs HTTP tools](./study_guide/http.md#http-tools)
+- [What is the HTTP request/response cycle?](./study_guide/http.md#the-http-request-response-cycle)
+- [What is meant by 'state' in the context of the web?](./study_guide/http.md#state)
+  - [How do we simulate statefulness?](./study_guide/http.md#simulating-state)
 
 ### Security
 
@@ -78,4 +81,4 @@
 - [The Internet - 10/12/2021](./study_sessions/10_12_2021.md)
 - [TCP & UDP - 10/13/2021](./study_sessions/10_13_21.md)
 - [URLs and More - 10/14/2021](./study_sessions/10_14_21.md)
-- [HTTP & TLS - 10/18/2021](./study_sessions/10_18_221.md)
+- [HTTP & TLS - 10/18/2021](./study_sessions/10_18_21.md)
