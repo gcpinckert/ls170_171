@@ -12,11 +12,7 @@
     - [What is asymmetric key encryption?](#asymmetric-key-encryption)
     - [What is a cipher suite?](#cipher-suites)
   - [TLS Authentication](#tls-authentication)
-<<<<<<< HEAD
     - [Certificate Authorities](#certificate-authorities)
-=======
-    - [Certificate Authorites](#certificate-authorities)
->>>>>>> ab1ab6eb761a7c5ab8444ff7899abfd29b087633
   - [TLS Integrity](#tls-integrity)
   - [DTLS](#dtls)
 
