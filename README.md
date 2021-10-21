@@ -73,8 +73,11 @@
 
 ### Security
 
-- [ ] What are the security risks to HTTP, and how do we deal with them?
-- [ ] What are the services that TLS provides?
+- [What are the security risks to HTTP, and how do we deal with them?](./study_guide/security.md#security-in-http)
+  - [Session Hijacking](./study_guide/security.md#session-hijacking)
+  - [Same Origin Policy](./study_guide/security.md#same-origin-policy)
+  - [Cross Site Scripting](./study_guide/security.md#cross-site-scripting)
+- [What are the services that TLS provides?](./study_guide/security.md#tls)
 
 ## Study Sessions
 
