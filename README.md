@@ -77,7 +77,17 @@
   - [Session Hijacking](./study_guide/security.md#session-hijacking)
   - [Same Origin Policy](./study_guide/security.md#same-origin-policy)
   - [Cross Site Scripting](./study_guide/security.md#cross-site-scripting)
-- [What are the services that TLS provides?](./study_guide/security.md#tls)
+- [TLS](./study_guide/security.md#tls)
+  - [What are the services that TLS provides?](./study_guide/security.md#what-are-the-services-that-tls-provides)
+  - [A general overview of the TLS Handshake](./study_guide/security.md#the-tls-handshake)
+  - [TLS Encryption](./study_guide/security.md#tls-encryption)
+    - [What is symmetric key encryption?](./study_guide/security.md#symmetric-key-encryption)
+    - [What is asymmetric key encryption?](./study_guide/security.md#asymmetric-key-encryption)
+    - [What is a cipher suite?](./study_guide/security.md#cipher-suites)
+  - [TLS Authentication](./study_guide/security.md#tls-authentication)
+    - [Certificate Authorities](./study_guide/security.md#certificate-authorities)
+  - [TLS Integrity](./study_guide/security.md#tls-integrity)
+  - [DTLS](./study_guide/security.md#dtls)
 
 ## Study Sessions
 
