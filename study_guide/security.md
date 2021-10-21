@@ -4,7 +4,17 @@
   - [Session Hijacking](#session-hijacking)
   - [Same Origin Policy](#same-origin-policy)
   - [Cross Site Scripting](#cross-site-scripting)
-- [What are the services that TLS provides?](#tls)
+- [TLS](#tls)
+  - [What are the services that TLS provides?](#what-are-the-services-that-tls-provides)
+  - [A general overview of the TLS Handshake](#the-tls-handshake)
+  - [TLS Encryption](#tls-encryption)
+    - [What is symmetric key encryption?](#symmetric-key-encryption)
+    - [What is asymmetric key encryption?](#asymmetric-key-encryption)
+    - [What is a cipher suite?](#cipher-suites)
+  - [TLS Authentication](#tls-authentication)
+    - [Certificate Authorities](#certificate-authorities)
+  - [TLS Integrity](#tls-integrity)
+  - [DTLS](#dtls)
 
 ## Security in HTTP
 
@@ -73,3 +83,95 @@ Purpose of TLS:
 - **TLS Integrity** ensures that a message hasn't been altered or interfered with during transit.
   - Data that is being exchanged via HTTP is encapsulated into a TLS record which contains a Message Authentication Code (MAC), which is used by the protocol to determine whether the message has been tampered with or faked.
   - This is slightly different than a regular checksum, which is only concerned with error detection.
+
+### The TLS Handshake
+
+A general overview of the TLS handshake:
+
+- The **TLS Handshake** is a special process that takes place after the TCP Handshake in which the client and the server exchange encryption keys.
+- This exchange allows both parties to communicate via encrypted messages, thus giving a security advantage over the inherently insecure messages of HTTP.
+- The encryption key exchange is accomplished via asymmetric key encryption.
+- Once the encryption keys are exchanged in the handshake, communication via symmetric encryptions between the client and the server can commence.
+- The TLS handshake also provides a means by which the two devices can decide on which TLS version should be used for the connection, as well as which algorithms should be used in the cipher suite.
+
+How the TLS Handshake is implemented:
+
+- The client sends a message to the server in the form of a `ClientHello`, which includes the maximum version of TLS protocol it supports and a list of available cipher suites.
+- The server responds with a `ServerHello`, which contains a decision regarding which TLS version and cipher suite will be used. It also includes the server's certificate and public key. This ends with a `ServerHelloDone` marker.
+- Next the client initiates the symmetric key exchange process, using the server's public key for asymmetric key encryption.
+- Once the keys have been exchanged, the server sends a ready-to-go message unsing the symmetric key and secure message exchange commences.
+
+Trade offs:
+
+- Allows us to implement secure message exchange over the inherently insecure text based protocol of HTTP
+- Because the TLS handshake is a complex process, it can add two round-trips of latency, this has an impact on speed and performance.
+
+### TLS Encryption
+
+#### Symmetric Key Encryption
+
+What is symmetric key encryption>? What are it's advantages and disadvantages?
+
+- Symmetric key encryption is an encrypted communication system in which both the sender and receiver posses a shared encryption key.
+- The advantages to this are that it facilitates two-way communication. Both parties can use the shared key to encode, send, and decode messages to and from the other.
+- This disadvantage is that a symmetric system relies on the fact that no one else has access to the key in order for it to remain secure.
+- This means that it requires a secure way for both paries to exchange keys before symmetric encryption can be established, and this is difficult to do on the web.
+- For this reason, it is used in _conjunction_ with asymmetric key encryption, which facilitates a secure exchange of a shared key
+
+#### Asymmetric Key Encryption
+
+What is asymmetric key encryption? What are its advantages and disadvantages?
+
+- Asymmetric Key Encryption is an encrypted communications system which uses two distinct keys: a public key and a private key.
+- The public key is used to encrypt and send a secure message to the recipient, who holds the private key, which is used to decode the encrypted message.
+- This only facilitates one way communication, in which only the party who holds the private key can receive and decode secure communications.
+- However, because it works only one way, we can se asymmetric key encryption as a means for hosts to exchange symmetric encryption keys during the TLS handshake process.
+
+#### Cipher Suites
+
+What is a cipher suite?
+
+- A cipher suite is the set of ciphers (i.e. cryptographic algorithms) that are used for encryption, decryption, and other security tasks.
+- In general, we want to have a distinct cipher (algorithm) for each task during secure communication.
+- These tasks might be performing the key exchange, symmetric key encryption, and checking message integrity.
+- Hosts agree on a cipher suite, or set of algorithms, they will use for each task during secure communication during the TLS handshake process.
+
+### TLS Authentication
+
+How does TLS Authentication Work?
+
+- TLS authentication is a means by which devices securely identify the other party in a message exchange, to ensure that party is trustworthy.
+- It uses digital certificates, which are provided by the server during the TLS handshake.
+- The certificate includes a public key, a signature (which consists of data encrypted with the private key), and the original data that was used to create the signature.
+- Upon receipt, the receiver decrypts the signature with the public key and checks that it matches against the original data, which tells it that the sender is who it says it is (because it holds the private key).
+- The digital certificate the server provides is considered to be trustworthy on the basis of the issuing certificate authority and the chain of trust.
+
+#### Certificate Authorities
+
+What are Certificate Authorities and the Chain of Trust?
+
+- Certificate Authorities are trustworthy sources that issue certificates used by servers to establish authentication.
+- We use certificates provided by these authorities to ensure that the certificate in question is not being faked.
+- Certificate authorities exist in a hierarchy known as the "chain of trust"
+- Within this hierarchy, the certificate for lower level authorities is signed by the CA one level above it
+- At the top of the chain there exists a Root CA whose certificate is "self-signed"
+- These consist of a small group of organizations who have proved their high level trustworthiness through prominence and longevity.
+
+### TLS Integrity
+
+How does TLS Integrity work?
+
+- TLS integrity makes sure that a message hasn't been altered, tampered with, or faked during transit.
+- Data that is being exchanged with HTTP is encapsulated within the TLS record.
+- Metadata such as the Message Authentication Code (MAC) allows us the check to see if the message has been interfered with.
+- The sender creates a digest of the data payload with a hashing algorithm (pre-agreed upon in the TLS handshake)
+- This data is then encrypted with the symmetric key and sent to the receiver
+- The receiver decrypts the data, creates a digest with the same pre-agreed upon hashing algorithm, and checks to see if the two match.
+
+### DTLS
+
+What is DTLS and why do we need it?
+
+- DTLS stands for Datagram Transport Layer Security.
+- It is a separate protocol based on TLS that is used with network connections that utilize UDP instead of TCP
+- Because TLS is interlinked with TCP and the TCP handshake, separate protocols are needed to meet the security requirements of UDP.
