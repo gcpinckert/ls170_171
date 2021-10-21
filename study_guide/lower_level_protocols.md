@@ -1,12 +1,12 @@
 # Lower Level Protocols
 
 - [The Link/Data Link Layer](#the-link/data-link-layer)
-  - [What is the Ethernet Protocol?](#what-is-the-ethernet-protocol?)
-  - [How does Ethernet Implement Framing?](#how-does-ethernet-implement-framing?)
-  - [How does Ethernet Implement Addressing?](#how-does-ethernet-implement-addressing?)
+  - [What is the Ethernet Protocol?](#what-is-the-ethernet-protocol)
+  - [How does Ethernet Implement Framing?](#how-does-ethernet-implement-framing)
+  - [How does Ethernet Implement Addressing?](#how-does-ethernet-implement-addressing)
 - [The Internet/Network Layer](#the-internet/network-layer)
-  - [How does IP implement its functionality?](#how-does-IP-implement-its-functionality?)
-  - [What is an IP address?](#what-is-an-ip-address?)
+  - [How does IP implement its functionality?](#how-does-IP-implement-its-functionality)
+  - [What is an IP address?](#what-is-an-ip-address)
 - [DNS](#dns)
 
 ## The Link/Data Link Layer

@@ -1,8 +1,8 @@
 # URLs
 
-- [What is a URL?](#what-is-a-url?)
+- [What is a URL?](#what-is-a-url)
 - [What is a URI and how does it relate to a URL?](#uris)
-- [What are the components of a URL?](#what-are-the-components-of-a-url?)
+- [What are the components of a URL?](#what-are-the-components-of-a-url)
 - [What is URL Encoding?](#url-encoding)
 
 ## What is a URL?

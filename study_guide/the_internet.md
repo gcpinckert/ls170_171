@@ -1,10 +1,10 @@
 # The Internet
 
-- [What is the Internet?](#what-is-the-internet?)
-- [How does the Internet work?](#how-does-the-internet-work?)
-- [What is the web?](#what-is-the-web?)
-- [What is a resource?](#what-is-a-resource?)
-- [What is the client-server model?](#what-is-the-client-server-model?)
+- [What is the Internet?](#what-is-the-internet)
+- [How does the Internet work?](#how-does-the-internet-work)
+- [What is the web?](#what-is-the-web)
+- [What is a resource?](#what-is-a-resource)
+- [What is the client-server model?](#what-is-the-client-server-model)
   - [Server-side Infrastructure](#server-side-infrastructure)
 
 ## What is the Internet?
